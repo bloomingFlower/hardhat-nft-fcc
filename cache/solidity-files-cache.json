@@ -482,8 +482,8 @@
       ]
     },
     "/Users/aaiiwitf/Projects/hh-fcc/hardhat-nft-fcc/contracts/RandomIpfsNft.sol": {
-      "lastModificationDate": 1664733365620,
-      "contentHash": "9e2f2d2735563b78f1a42d55219ab6ed",
+      "lastModificationDate": 1666190249523,
+      "contentHash": "7a100932d8eaf19b5ee46948d9c2601b",
       "sourceName": "contracts/RandomIpfsNft.sol",
       "solcConfig": {
         "version": "0.8.8",
@@ -791,7 +791,7 @@
       "contentHash": "48baa0a3301edce43bb3deeec1831738",
       "sourceName": "contracts/test/MockV3Aggregator.sol",
       "solcConfig": {
-        "version": "0.6.12",
+        "version": "0.6.6",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -833,7 +833,7 @@
       "contentHash": "b1f27d8f04303e8c78cd057685d883f6",
       "sourceName": "@chainlink/contracts/src/v0.6/tests/MockV3Aggregator.sol",
       "solcConfig": {
-        "version": "0.6.12",
+        "version": "0.6.6",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -877,7 +877,7 @@
       "contentHash": "6b76a24083942363411bb0b83ffeb997",
       "sourceName": "@chainlink/contracts/src/v0.6/interfaces/AggregatorV2V3Interface.sol",
       "solcConfig": {
-        "version": "0.6.12",
+        "version": "0.6.6",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -922,7 +922,7 @@
       "contentHash": "0c9be74e354bca05abc54edfdc49607e",
       "sourceName": "@chainlink/contracts/src/v0.6/interfaces/AggregatorInterface.sol",
       "solcConfig": {
-        "version": "0.6.12",
+        "version": "0.6.6",
         "settings": {
           "optimizer": {
             "enabled": false,
@@ -964,7 +964,7 @@
       "contentHash": "79f9f2c352a0b4454d1416042e7f7ae0",
       "sourceName": "@chainlink/contracts/src/v0.6/interfaces/AggregatorV3Interface.sol",
       "solcConfig": {
-        "version": "0.6.12",
+        "version": "0.6.6",
         "settings": {
           "optimizer": {
             "enabled": false,

@@ -15,6 +15,7 @@ const networkConfig = {
         callbackGasLimit: "500000",
         interval: "30",
         mintFee: "1000000000000000000", //0.01
+        ethUsdPriceFeed: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
     },
 }
 const INITIAL_SUPPLY = "0" //"1000000000000000000000000"
