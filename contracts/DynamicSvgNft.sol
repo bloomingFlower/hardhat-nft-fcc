@@ -6,6 +6,8 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 import "base64-sol/base64.sol";
 
+error ERC721Metadata__URI_QueryFor_NonExistentToken();
+
 contract DynamicSvgNft is ERC721 {
     // mint
     // store SVG information somewhere
@@ -38,8 +40,8 @@ contract DynamicSvgNft is ERC721 {
 
     function mintNft(int256 highValue) public {
         s_tokenIdToHighValue[s_tokenCounter] = highValue;
-        s_tokenCounter = s_tokenCounter + 1;
         _safeMint(msg.sender, s_tokenCounter);
+        s_tokenCounter = s_tokenCounter + 1;
         emit CreatedNFT(s_tokenCounter, highValue);
     }
 
@@ -47,8 +49,10 @@ contract DynamicSvgNft is ERC721 {
         return "data:application/json;base64,";
     }
 
-    function tokenURI(uint256 tokenId) public view override returns (string memory) {
-        require(_exists(tokenId), "URI Query for nonexistent token");
+    function tokenURI(uint256 tokenId) public view virtual override returns (string memory) {
+        if (!_exists(tokenId)) {
+            revert ERC721Metadata__URI_QueryFor_NonExistentToken();
+        }
         //string memory imageURI = "hi!";
         (, int256 price, , , ) = i_priceFeed.latestRoundData();
         string memory imageURI = i_lowImageURI;
@@ -65,8 +69,8 @@ contract DynamicSvgNft is ERC721 {
                             abi.encodePacked(
                                 '{"name:":"',
                                 name(),
-                                '", "description":"An NF that changes baseeed on the Chainlink Feed", ',
-                                '"attributes":[{"trait_type": "coolness", "value": 100}], "image":"',
+                                '", "description":"An NFT that changes based on the Chainlink Feed", ',
+                                '"attributes": [{"trait_type": "coolness", "value": 100}], "image":"',
                                 imageURI,
                                 '"}'
                             )
